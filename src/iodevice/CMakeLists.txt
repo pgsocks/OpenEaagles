@@ -1,0 +1,11 @@
+add_library(iodevice
+	Ai2DiSwitch.cpp
+	AnalogInput.cpp
+	AnalogOutput.cpp
+	Controller.cpp
+	DiscreteInput.cpp
+	DiscreteOutput.cpp
+	factory.cpp
+	IoData.cpp
+	SignalGen.cpp
+)

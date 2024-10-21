@@ -1,0 +1,13 @@
+add_library(dafif
+	Airport.cpp
+	AirportLoader.cpp
+	Record.cpp
+	Database.cpp
+	factory.cpp
+	Ils.cpp
+	Navaid.cpp
+	NavaidLoader.cpp
+	Runway.cpp
+	Waypoint.cpp
+	WaypointLoader.cpp
+)

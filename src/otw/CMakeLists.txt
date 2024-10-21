@@ -1,0 +1,11 @@
+add_library(otw
+	cigi/CigiCl.cpp
+	cigi/CigiClNetwork.cpp
+	cigi/OtwCigiCl.cpp
+	cigi/OtwModelCigiCl.cpp
+	pc/OtwPC.cpp
+	Otm.cpp
+	Otw.cpp
+	OtwModel.cpp
+	factory.cpp
+)

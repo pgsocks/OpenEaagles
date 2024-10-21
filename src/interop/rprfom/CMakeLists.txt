@@ -1,0 +1,13 @@
+add_library(interop_rprfom
+	factory.cpp
+	NetIO.cpp
+	NetIO_entity_state.cpp
+	NetIO_munition_detonation.cpp
+	NetIO_weapon_fire.cpp
+	Nib.cpp
+	Nib_entity_state.cpp
+	Nib_munition_detonation.cpp
+	Nib_weapon_fire.cpp
+	Ntm.cpp
+	RprFom.cpp
+)

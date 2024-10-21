@@ -1,0 +1,13 @@
+add_library(map_rpf
+	CadrgClut.cpp
+	CadrgFile.cpp
+	CadrgFrame.cpp
+	CadrgFrameEntry.cpp
+	CadrgMap.cpp
+	CadrgTocEntry.cpp
+	factory.cpp
+	MapDrawer.cpp
+	TexturePager.cpp
+	TextureTable.cpp
+	map_utils.cpp
+)

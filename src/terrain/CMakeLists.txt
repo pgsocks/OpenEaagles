@@ -1,0 +1,9 @@
+add_library(terrain
+	ded/DedFile.cpp
+	dted/DtedFile.cpp
+	srtm/SrtmHgtFile.cpp
+	DataFile.cpp
+	factory.cpp
+	QuadMap.cpp
+	Terrain.cpp
+)

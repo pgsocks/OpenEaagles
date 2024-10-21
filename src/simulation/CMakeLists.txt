@@ -1,0 +1,16 @@
+add_library(simulation
+	AbstractDataRecorder.cpp
+	AbstractNetIO.cpp
+	AbstractNib.cpp
+	AbstractOtw.cpp
+	AbstractPlayer.cpp
+	AbstractRecorderComponent.cpp
+	SimBgThread.cpp
+	SimTcThread.cpp
+	Simulation.cpp
+	Station.cpp
+	StationBgThread.cpp
+	StationNetThread.cpp
+	StationTcThread.cpp
+	factory.cpp
+)
