@@ -1,7 +1,7 @@
 find_package(protobuf CONFIG REQUIRED)
 
 add_library(recorder
-	protobuf/DataRecord.pb.cc
+	protobuf/DataRecord.proto
 	DataRecorder.cpp
 	DataRecordHandle.cpp
 	factory.cpp
@@ -18,3 +18,10 @@ add_library(recorder
 )
 
 target_link_libraries(recorder PRIVATE protobuf::libprotobuf protobuf::libprotoc)
+target_include_directories(recorder PUBLIC ${CMAKE_CURRENT_BINARY_DIR}/include)
+
+protobuf_generate (
+	TARGET recorder
+	APPEND_PATH ""
+	PROTOC_OUT_DIR include/openeaagles/recorder/protobuf
+)
