@@ -4,6 +4,7 @@ project(OpenEaagles)
 
 option(OPENEAAGLES_MODELS "Build models with JSBSim" OFF)
 option(OPENEAAGLES_GRAPHICS "Build the graphics module" OFF)
+option(OPENEAAGLES_INTEROP "Build the interop modules" OFF)
 option(OPENEAAGLES_INTEROP_HLA "Build the interop HLA module" OFF)
 option(OPENEAAGLES_INTEROP_RPRFOM "Build the interop RPRFOM module" OFF)
 option(OPENEAAGLES_INTEROP_DIS "Build the interop DIS module" ON)
