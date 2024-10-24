@@ -71,6 +71,12 @@ install (
 	TARGETS ${OpenEaagles_INSTALL_TARGETS}
 	EXPORT OpenEaaglesTargets
 )
+install (
+	EXPORT OpenEaaglesTargets
+	FILE OpenEaaglesTargets.cmake
+	NAMESPACE OpenEaagles::
+	DESTINATION lib/cmake/OpenEaagles
+)
 
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file (
@@ -78,8 +84,14 @@ write_basic_package_version_file (
 	VERSION ${PROJECT_VERSION}
 	COMPATIBILITY AnyNewerVersion
 )
+configure_package_config_file (
+	OpenEaaglesConfig.cmake.in
+	${CMAKE_CURRENT_BINARY_DIR}/OpenEaaglesConfig.cmake
+	INSTALL_DESTINATION lib/cmake/OpenEaagles
+)
 
 install (FILES
 	${CMAKE_CURRENT_BINARY_DIR}/OpenEaaglesConfigVersion.cmake
+	${CMAKE_CURRENT_BINARY_DIR}/OpenEaaglesConfig.cmake
 	DESTINATION lib/cmake/OpenEaagles
 )
