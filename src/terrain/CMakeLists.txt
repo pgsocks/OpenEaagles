@@ -7,3 +7,21 @@ add_library(terrain
 	QuadMap.cpp
 	Terrain.cpp
 )
+
+target_include_directories (
+	terrain
+	PUBLIC
+	$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+	$<INSTALL_INTERFACE:include>
+)
+
+install (
+	TARGETS terrain
+)
+
+install (
+	DIRECTORY
+		${CMAKE_CURRENT_SOURCE_DIR}/include/
+	DESTINATION include
+	FILES_MATCHING PATTERN "*.h" PATTERN "*.hpp"
+)
