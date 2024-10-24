@@ -14,6 +14,12 @@ add_library(linearsystem
 	Sz2.cpp
 )
 
+target_link_libraries (
+	linearsystem
+	PRIVATE
+	base
+)
+
 target_include_directories (
 	linearsystem
 	PUBLIC

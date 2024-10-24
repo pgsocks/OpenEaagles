@@ -10,6 +10,12 @@ add_library(iodevice
 	SignalGen.cpp
 )
 
+target_link_libraries (
+	iodevice
+	PRIVATE
+	base
+)
+
 target_include_directories (
 	iodevice
 	PUBLIC

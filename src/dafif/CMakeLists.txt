@@ -12,6 +12,12 @@ add_library(dafif
 	WaypointLoader.cpp
 )
 
+target_link_libraries (
+	dafif
+	PRIVATE
+	base
+)
+
 target_include_directories (
 	dafif
 	PUBLIC

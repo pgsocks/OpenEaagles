@@ -8,6 +8,12 @@ add_library(terrain
 	Terrain.cpp
 )
 
+target_link_libraries (
+	terrain
+	PRIVATE
+	base
+)
+
 target_include_directories (
 	terrain
 	PUBLIC

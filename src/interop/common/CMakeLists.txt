@@ -3,3 +3,11 @@ add_library(interop_common
 	Nib.cpp
 	Ntm.cpp
 )
+
+target_link_libraries (
+	interop_common
+	PRIVATE
+	simulation
+	base
+	models
+)

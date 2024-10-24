@@ -12,3 +12,9 @@ add_library(interop_dis
 	Nib_weapon_fire.cpp
 	Ntm.cpp
 )
+
+target_link_libraries (
+	interop_common
+	PRIVATE
+	base
+)

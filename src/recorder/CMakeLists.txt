@@ -17,7 +17,15 @@ add_library(recorder
 	TabPrinter.cpp
 )
 
-target_link_libraries(recorder PRIVATE protobuf::libprotobuf protobuf::libprotoc)
+target_link_libraries (
+	recorder
+	PRIVATE
+	base
+	simulation
+	models
+	protobuf::libprotobuf
+	protobuf::libprotoc
+)
 target_include_directories (
 	recorder
 	PUBLIC

@@ -31,6 +31,13 @@ add_library(instruments
 	Instrument.cpp
 )
 
+target_link_libraries (
+	instruments
+	PRIVATE
+	base
+	graphics
+)
+
 target_include_directories (
 	instruments
 	PUBLIC

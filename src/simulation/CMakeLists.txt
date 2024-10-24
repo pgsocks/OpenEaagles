@@ -15,6 +15,12 @@ add_library(simulation
 	factory.cpp
 )
 
+target_link_libraries (
+	simulation
+	PRIVATE
+	base
+)
+
 target_include_directories (
 	simulation
 	PUBLIC
