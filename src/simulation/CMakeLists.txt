@@ -29,10 +29,6 @@ target_include_directories (
 )
 
 install (
-	TARGETS simulation
-)
-
-install (
 	DIRECTORY
 		${CMAKE_CURRENT_SOURCE_DIR}/include/
 	DESTINATION include

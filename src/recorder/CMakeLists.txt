@@ -43,10 +43,6 @@ protobuf_generate (
 )
 
 install (
-	TARGETS recorder
-)
-
-install (
 	DIRECTORY
 		${CMAKE_CURRENT_SOURCE_DIR}/include/
 		# Generated Protobuf headers must also be installed.
