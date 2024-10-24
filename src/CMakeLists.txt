@@ -69,4 +69,17 @@ endif()
 
 install (
 	TARGETS ${OpenEaagles_INSTALL_TARGETS}
+	EXPORT OpenEaaglesTargets
+)
+
+include(CMakePackageConfigHelpers)
+write_basic_package_version_file (
+	${CMAKE_CURRENT_BINARY_DIR}/OpenEaaglesConfigVersion.cmake
+	VERSION ${PROJECT_VERSION}
+	COMPATIBILITY AnyNewerVersion
+)
+
+install (FILES
+	${CMAKE_CURRENT_BINARY_DIR}/OpenEaaglesConfigVersion.cmake
+	DESTINATION lib/cmake/OpenEaagles
 )

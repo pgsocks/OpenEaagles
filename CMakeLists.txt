@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(OpenEaagles)
+project(OpenEaagles VERSION 17.06)
 
 option(OPENEAAGLES_MODELS "Build models with JSBSim" OFF)
 option(OPENEAAGLES_GRAPHICS "Build the graphics module" OFF)
