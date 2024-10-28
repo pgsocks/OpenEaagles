@@ -68,6 +68,12 @@ if(OPENEAAGLES_GRAPHICS)
 endif()
 
 install (
+	DIRECTORY
+		${CMAKE_SOURCE_DIR}/include/
+	DESTINATION include
+	FILES_MATCHING PATTERN "*.h" PATTERN "*.hpp"
+)
+install (
 	TARGETS ${OpenEaagles_INSTALL_TARGETS}
 	EXPORT OpenEaaglesTargets
 )
