@@ -1,7 +1,27 @@
+set(OPENEAAGLES_BASE_SRC "")
+if(WIN32)
+	list(APPEND OPENEAAGLES_BASE_SRC
+		concurrent/platform/PeriodicTask_msvc.cpp
+		concurrent/platform/SyncTask_msvc.cpp
+		concurrent/platform/Thread_msvc.cpp
+		util/platform/system_msvc.cpp
+	)
+elseif(MINGW)
+	list(APPEND OPENEAAGLES_BASE_SRC
+		concurrent/platform/PeriodicTask_msvc.cpp
+		concurrent/platform/SyncTask_msvc.cpp
+		concurrent/platform/Thread_msvc.cpp
+		util/platform/system_mingw.cpp
+	)
+else()
+	list(APPEND OPENEAAGLES_BASE_SRC
+		concurrent/platform/PeriodicTask_linux.cpp
+		concurrent/platform/SyncTask_linux.cpp
+		concurrent/platform/Thread_linux.cpp
+		util/platform/system_linux.cpp
+	)
+endif()
 add_library(base
-	concurrent/platform/PeriodicTask_linux.cpp
-	concurrent/platform/SyncTask_linux.cpp
-	concurrent/platform/Thread_linux.cpp
 	concurrent/PeriodicTask.cpp
 	concurrent/SingleTask.cpp
 	concurrent/SyncTask.cpp
@@ -56,7 +76,6 @@ add_library(base
 	units/Powers.cpp
 	units/Times.cpp
 	units/Volumes.cpp
-	util/platform/system_linux.cpp
 	util/lfi.cpp
 	util/math_utils.cpp
 	util/nav_utils.cpp
@@ -103,6 +122,7 @@ add_library(base
 	Transforms.cpp
 	Vectors.cpp
 	Yiq.cpp
+	${OPENEAAGLES_BASE_SRC}
 )
 
 target_include_directories (
