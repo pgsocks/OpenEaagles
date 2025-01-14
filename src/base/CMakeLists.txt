@@ -125,6 +125,10 @@ add_library(base
 	${OPENEAAGLES_BASE_SRC}
 )
 
+if(WIN32)
+	target_link_libraries(base ws2_32 winmm)
+endif()
+
 target_include_directories (
 	base
 	PUBLIC
