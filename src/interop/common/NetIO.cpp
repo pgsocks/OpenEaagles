@@ -39,7 +39,7 @@
 #include <cstring>
 #include <cmath>
 
-#if !defined(WIN32)
+#if !defined(_WIN32)
 #include <arpa/inet.h>
 #endif
 

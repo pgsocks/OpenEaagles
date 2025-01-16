@@ -2,7 +2,7 @@
 #ifndef __oe_base_util_atomics_H__
 #define __oe_base_util_atomics_H__
 
-#if defined(WIN32)
+#if defined(_WIN32)
   #if defined(__MINGW32__)
     // MinGW
     #include "openeaagles/base/util/platform/atomics_mingw.hpp"

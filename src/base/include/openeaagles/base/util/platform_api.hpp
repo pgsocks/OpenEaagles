@@ -6,7 +6,7 @@
 // Operating system, compiler and window manager specific includes
 //------------------------------------------------------------------------------
 
-#if defined(WIN32)
+#if defined(_WIN32)
   #if defined(__MINGW32__)
     // MinGW
     #include "openeaagles/base/util/platform/platform_api_mingw.hpp"

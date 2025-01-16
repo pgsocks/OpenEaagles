@@ -1,5 +1,5 @@
 
-#if defined(WIN32)
+#if defined(_WIN32)
     #define _WINSOCK_DEPRECATED_NO_WARNINGS
     #include <sys/types.h>
     #include <Winsock2.h>
@@ -61,7 +61,7 @@ PosixHandler::PosixHandler():localAddr(INADDR_ANY), netAddr(INADDR_ANY), fromAdd
    STANDARD_CONSTRUCTOR()
 
    // Since INVALID_SOCKET is set to the invalid socket state above for both
-   // WIN32 and POSIX, there is no need to differentiate between them at this
+   // _WIN32 and POSIX, there is no need to differentiate between them at this
    // level or further in the source.
    socketNum = INVALID_SOCKET;
 }
@@ -159,7 +159,7 @@ bool PosixHandler::bindSocket()
     // Set the reuse socket attribute
     // ---
     {
-#if defined(WIN32)
+#if defined(_WIN32)
         BOOL optval = getSharedFlag();
         socklen_t optlen = sizeof(optval);
         if (::setsockopt(socketNum, SOL_SOCKET, SO_REUSEADDR, (const char*) &optval, optlen) == SOCKET_ERROR) {
@@ -185,7 +185,7 @@ bool PosixHandler::setSendBuffSize()
 
    const unsigned int optval = sendBuffSizeKb * 1024;
    socklen_t optlen = sizeof(optval);
-#if defined(WIN32)
+#if defined(_WIN32)
    if (::setsockopt(socketNum, SOL_SOCKET, SO_SNDBUF, reinterpret_cast<const char*>(&optval), optlen) == SOCKET_ERROR) {
 #else
    if (::setsockopt(socketNum, SOL_SOCKET, SO_SNDBUF, reinterpret_cast<const void*>(&optval), optlen) == SOCKET_ERROR) {
@@ -205,7 +205,7 @@ bool PosixHandler::setRecvBuffSize()
 
    const unsigned int optval = recvBuffSizeKb * 1024;
    socklen_t optlen = sizeof (optval);
-#if defined(WIN32)
+#if defined(_WIN32)
    if (::setsockopt(socketNum, SOL_SOCKET, SO_RCVBUF, reinterpret_cast<const char*>(&optval), optlen) == SOCKET_ERROR) {
 #else
    if (::setsockopt(socketNum, SOL_SOCKET, SO_RCVBUF, reinterpret_cast<const void*>(&optval), optlen) == SOCKET_ERROR) {
@@ -224,7 +224,7 @@ bool PosixHandler::setBlocked()
     if (socketNum == NET_INVALID_SOCKET) return false;
 
 // Set the socket 'sock' to Blocking. Wait I/O.
-#if defined(WIN32)
+#if defined(_WIN32)
     unsigned long zz = false;
     if (::ioctlsocket(socketNum, FIONBIO, &zz) == SOCKET_ERROR) {
         std::perror("PosixHandler::setBlocked()");
@@ -249,7 +249,7 @@ bool PosixHandler::setNoWait()
     if (socketNum == NET_INVALID_SOCKET) return false;
 
 // Set the socket 'sock' to Non-Blocking. Nowait I/O.
-#if defined(WIN32)
+#if defined(_WIN32)
     unsigned long zz = true;
     if (::ioctlsocket(socketNum, FIONBIO, &zz ) == SOCKET_ERROR) {
         std::perror("PosixHandler::setNoWait()");
@@ -299,7 +299,7 @@ bool PosixHandler::sendData(const char* const packet, const int size)
     socklen_t addrlen = sizeof(addr);
     int result = ::sendto(socketNum, packet, size, 0, reinterpret_cast<const struct sockaddr*>(&addr), addrlen);
     if (result == SOCKET_ERROR) {
-#if defined(WIN32)
+#if defined(_WIN32)
         int err = ::WSAGetLastError();
         if (isMessageEnabled(MSG_ERROR)) {
             std::cerr << "PosixHandler::sendData(): sendto error: " << err << " hex=0x" << std::hex << err << std::dec << std::endl;

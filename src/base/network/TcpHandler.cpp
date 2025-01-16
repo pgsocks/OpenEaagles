@@ -9,7 +9,7 @@
 // use later in the code.  This will save a lot of pre-processor intervention
 // and make the code that much more enjoyable to read!
 //
-#if defined(WIN32)
+#if defined(_WIN32)
     #include <sys/types.h>
     #include <Winsock2.h>
     #include <WS2tcpip.h>
@@ -114,7 +114,7 @@ bool TcpHandler::closeConnection()
 {
     bool success = true;
 
-#if defined(WIN32)
+#if defined(_WIN32)
     if (::closesocket(socketNum) == SOCKET_ERROR) {
 #else
     if (::shutdown(socketNum, SHUT_RDWR) == SOCKET_ERROR) {
@@ -142,7 +142,7 @@ bool TcpHandler::sendData(const char* const packet, const int size)
     if (result == SOCKET_ERROR) {
         connected = false;
         connectionTerminated = true;
-#if defined(WIN32)
+#if defined(_WIN32)
         int err = WSAGetLastError();
         if (isMessageEnabled(MSG_ERROR)) {
            std::cerr << "TcpHandler::sendData(): sendto error: " << err << " hex=0x" << std::hex << err << std::dec << std::endl;

@@ -80,7 +80,7 @@ void CadrgClut::load(CadrgFrameEntry& frame, int cib, ColorTableSizes clutSize)
     const auto string = new base::String(frame.getDirectory());
     string->catStr(frame.getFileName());
 
-    #if defined(WIN32)
+    #if defined(_WIN32)
         std::ifstream   fin(*string, std::ios::in | std::ios::binary);
     #else
         std::ifstream   fin(*string, std::ios::in);

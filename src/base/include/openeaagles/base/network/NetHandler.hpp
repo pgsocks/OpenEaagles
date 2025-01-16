@@ -24,7 +24,7 @@ class NetHandler : public Component
    DECLARE_SUBCLASS(NetHandler, Component)
 
 public:  // Define the Windows vs Unix socket type
-   #if defined(WIN32)
+   #if defined(_WIN32)
       typedef SOCKET LcSocket;
       static const LcSocket NET_INVALID_SOCKET = INVALID_SOCKET;
       static const int      NET_SOCKET_ERROR   = SOCKET_ERROR;

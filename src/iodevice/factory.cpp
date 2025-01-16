@@ -13,7 +13,7 @@
 
 #include <string>
 
-#if defined(WIN32)
+#if defined(_WIN32)
    #include "./platform/UsbJoystick_msvc.hpp"
 #else
    #include "./platform/UsbJoystick_linux.hpp"

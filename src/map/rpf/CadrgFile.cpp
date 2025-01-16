@@ -155,7 +155,7 @@ bool CadrgFile::checkForMap(const char* dir)
     const auto string = new base::String(dir);
     string->catStr("A.TOC");
 
-    #if defined(WIN32)
+    #if defined(_WIN32)
         toc.open(*string, std::ios::in | std::ios::binary);
     #else
         toc.open(*string, std::ios::in);
@@ -168,7 +168,7 @@ bool CadrgFile::checkForMap(const char* dir)
         string->empty();
         string->setStr(dir);
         string->catStr("a.toc");
-        #if defined(WIN32)
+        #if defined(_WIN32)
             toc.open(*string, std::ios::in | std::ios::binary);
         #else
             toc.open(*string, std::ios::in);
@@ -237,7 +237,7 @@ bool CadrgFile::initialize(const char* dir)
     else originalDir = new base::String(dir);
     string->catStr("A.TOC");
 
-    #if defined(WIN32)
+    #if defined(_WIN32)
         toc.open(*string, std::ios::in | std::ios::binary);
     #else
         toc.open(*string, std::ios::in);
@@ -250,7 +250,7 @@ bool CadrgFile::initialize(const char* dir)
         string->empty();
         string->setStr(dir);
         string->catStr("a.toc");
-        #if defined(WIN32)
+        #if defined(_WIN32)
             toc.open(*string, std::ios::in | std::ios::binary);
         #else
             toc.open(*string, std::ios::in);
@@ -600,7 +600,7 @@ bool CadrgFile::initialize(const char* dir)
                     // Allocate our frame file directory path, which is our path name length + 1 + string length of the directory name passed in
 
                     size_t size = ffPathLength + 1 + std::strlen(dir);
-                    #if defined(WIN32)
+                    #if defined(_WIN32)
                         char* directory = (char *) malloc(size);
                     #else
                         char* directory = (char *) alloca(size);

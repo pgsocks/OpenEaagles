@@ -19,7 +19,7 @@ namespace graphics {
 //------------------------------------------------------------------------------
 // Define the BITMAP File for non-Windows systems
 //------------------------------------------------------------------------------
-//#if !defined(WIN32)
+//#if !defined(_WIN32)
 
 struct BITMAPINFOHEADER_X {
    uint32_t biSize;

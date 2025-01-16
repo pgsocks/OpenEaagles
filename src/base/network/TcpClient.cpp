@@ -9,7 +9,7 @@
 // use later in the code.  This will save a lot of pre-processor intervention
 // and make the code that much more enjoyable to read!
 //
-#if defined(WIN32)
+#if defined(_WIN32)
     #include <sys/types.h>
     #include <Winsock2.h>
     #include <WS2tcpip.h>

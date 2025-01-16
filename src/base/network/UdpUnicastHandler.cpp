@@ -9,7 +9,7 @@
 // use later in the code.  This will save a lot of pre-processor intervention
 // and make the code that much more enjoyable to read!
 //
-#if defined(WIN32)
+#if defined(_WIN32)
     #define _WINSOCK_DEPRECATED_NO_WARNINGS
     #include <sys/types.h>
     #include <winsock2.h>
@@ -157,7 +157,7 @@ bool UdpUnicastHandler::sendDataTo(
     socklen_t addrlen = sizeof(addr);
     int result = ::sendto(socketNum, packet, size, 0, reinterpret_cast<const struct sockaddr*>(&addr), addrlen);
     if (result == SOCKET_ERROR) {
-#if defined(WIN32)
+#if defined(_WIN32)
         int err = WSAGetLastError();
         if (isMessageEnabled(MSG_ERROR)) {
             std::cerr << "UdpUnicastHandler::sendDataTo(): sendto error: " << err << " hex=0x" << std::hex << err << std::dec << std::endl;

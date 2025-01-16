@@ -9,7 +9,7 @@
 // use later in the code.  This will save a lot of pre-processor intervention
 // and make the code that much more enjoyable to read!
 //
-#if defined(WIN32)
+#if defined(_WIN32)
     #define _WINSOCK_DEPRECATED_NO_WARNINGS
     #include <sys/types.h>
     #include <Winsock2.h>
@@ -163,7 +163,7 @@ bool TcpServerSingle::acceptConnection()
 
    // After accepting a connection we close the original opened socket and
    // we then assign socketNum to our local tcpSocket.
-#if defined(WIN32)
+#if defined(_WIN32)
    if (::closesocket(socketNum) == SOCKET_ERROR) {
 #else
    if (::shutdown(socketNum, SHUT_RDWR) == SOCKET_ERROR) {

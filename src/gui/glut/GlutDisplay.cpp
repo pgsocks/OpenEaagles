@@ -13,7 +13,7 @@
 #include <GL/glut.h>
 //#include <GL/freeglut.h>
 
-#if !defined(WIN32)
+#if !defined(_WIN32)
 #include <sys/time.h>
 #endif
 

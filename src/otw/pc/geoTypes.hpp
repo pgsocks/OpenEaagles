@@ -38,7 +38,7 @@ typedef int                  int_4;
 typedef float                float_4;
 typedef double               float_8;
 
-#if defined(WIN32)
+#if defined(_WIN32)
 //  #include <Wtypes.h>
     typedef ULONGLONG        uin_8;
     typedef LONGLONG         int_8;

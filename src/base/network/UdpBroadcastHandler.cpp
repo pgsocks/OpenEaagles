@@ -9,7 +9,7 @@
 // use later in the code.  This will save a lot of pre-processor intervention
 // and make the code that much more enjoyable to read!
 //
-#if defined(WIN32)
+#if defined(_WIN32)
     #define _WINSOCK_DEPRECATED_NO_WARNINGS
     #include <sys/types.h>
     #include <Winsock2.h>
@@ -106,7 +106,7 @@ bool UdpBroadcastHandler::init()
     // Set socket attribute for BROADCAST
     // ---
     {
-#if defined(WIN32)
+#if defined(_WIN32)
         BOOL optval = 1;
         if (::setsockopt(socketNum, SOL_SOCKET, SO_BROADCAST, (const char*) &optval, sizeof(optval)) == SOCKET_ERROR) {
 #else
@@ -164,7 +164,7 @@ bool UdpBroadcastHandler::bindSocket()
        struct sockaddr_in addr;        // Working address structure
        bzero(&addr, sizeof(addr));
        addr.sin_family = AF_INET;
-#if defined(WIN32)
+#if defined(_WIN32)
        addr.sin_addr.s_addr = getLocalAddr();
 #else
        addr.sin_addr.s_addr = getNetAddr();

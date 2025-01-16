@@ -127,7 +127,7 @@ private: // Functions
    virtual unsigned long mainThreadFunc() =0;
 
    // The static thread function ---
-   #if defined(WIN32)
+   #if defined(_WIN32)
       static DWORD WINAPI staticThreadFunc(LPVOID lpParam);
    #else
       static void* staticThreadFunc(void* lpParam);

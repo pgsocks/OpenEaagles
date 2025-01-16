@@ -9,7 +9,7 @@
 // use later in the code.  This will save a lot of pre-processor intervention
 // and make the code that much more enjoyable to read!
 //
-#if defined(WIN32)
+#if defined(_WIN32)
     #define _WINSOCK_DEPRECATED_NO_WARNINGS
     #include <sys/types.h>
     #include <Winsock2.h>
@@ -125,7 +125,7 @@ bool UdpMulticastHandler::init()
     // Set the Multicast loopback attribute
     // ---
     {
-#if defined(WIN32)
+#if defined(_WIN32)
         BOOL optval = getLoopback();
         if (::setsockopt(socketNum, IPPROTO_IP, IP_MULTICAST_LOOP, (const char*) &optval, sizeof(optval)) == SOCKET_ERROR) {
 #else
@@ -141,7 +141,7 @@ bool UdpMulticastHandler::init()
     // Set the Multicast Time-To-Live (TTL) attribute
     // ---
     {
-#if defined(WIN32)
+#if defined(_WIN32)
         int optval = getTTL();
         if (::setsockopt(socketNum, IPPROTO_IP, IP_MULTICAST_TTL, (const char*) &optval, sizeof(optval)) == SOCKET_ERROR) {
 #else
@@ -174,7 +174,7 @@ bool UdpMulticastHandler::bindSocket()
        struct sockaddr_in addr;        // Working address structure
        bzero(&addr, sizeof(addr));
        addr.sin_family = AF_INET;
-#if defined(WIN32)
+#if defined(_WIN32)
        addr.sin_addr.s_addr = INADDR_ANY;
 #else
        addr.sin_addr.s_addr = ::inet_addr(multicastGroup);

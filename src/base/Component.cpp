@@ -188,7 +188,7 @@ void Component::tcFrame(const double dt)
    // ---
    double tcStartTime = 0.0;
    if (isTimingStatsEnabled()) {
-      #if defined(WIN32)
+      #if defined(_WIN32)
          LARGE_INTEGER fcnt;
          QueryPerformanceCounter(&fcnt);
          tcStartTime = static_cast<double>( fcnt.QuadPart );
@@ -208,7 +208,7 @@ void Component::tcFrame(const double dt)
    if (isTimingStatsEnabled()) {
 
       double dtime = 0;    // Delta time in MS
-      #if defined(WIN32)
+      #if defined(_WIN32)
          LARGE_INTEGER cFreq;
          QueryPerformanceFrequency(&cFreq);
          auto freq = static_cast<double>( cFreq.QuadPart );

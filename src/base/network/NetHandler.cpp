@@ -5,7 +5,7 @@
 // typedefs, defines, and constants that will make each convention match for
 // use later in the code.  This will save a lot of pre-processor intervention
 // and make the code that much more enjoyable to read!
-#if defined(WIN32)
+#if defined(_WIN32)
     #include <sys/types.h>
     #include <Winsock2.h>
     #define bzero(a,b)  ZeroMemory( a, b )
@@ -64,7 +64,7 @@ bool NetHandler::init()
 {
     bool ok = true;
 
-#if defined(WIN32)
+#if defined(_WIN32)
     // initialize Winsock2
     WSADATA wsaData;
     WORD wVersionRequested = MAKEWORD( 2, 2 );
