@@ -15,7 +15,7 @@ add_library(interop_dis
 
 target_link_libraries (
 	interop_dis
-	PRIVATE
+	PUBLIC
 	base
 )
 

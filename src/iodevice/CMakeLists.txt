@@ -12,7 +12,7 @@ add_library(iodevice
 
 target_link_libraries (
 	iodevice
-	PRIVATE
+	PUBLIC
 	base
 )
 

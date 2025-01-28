@@ -10,7 +10,7 @@ add_library(terrain
 
 target_link_libraries (
 	terrain
-	PRIVATE
+	PUBLIC
 	base
 )
 

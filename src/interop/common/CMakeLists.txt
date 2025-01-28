@@ -6,7 +6,7 @@ add_library(interop_common
 
 target_link_libraries (
 	interop_common
-	PRIVATE
+	PUBLIC
 	simulation
 	base
 	models

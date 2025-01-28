@@ -33,7 +33,7 @@ add_library(instruments
 
 target_link_libraries (
 	instruments
-	PRIVATE
+	PUBLIC
 	base
 	graphics
 )

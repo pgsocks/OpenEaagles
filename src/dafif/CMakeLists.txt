@@ -14,7 +14,7 @@ add_library(dafif
 
 target_link_libraries (
 	dafif
-	PRIVATE
+	PUBLIC
 	base
 )
 

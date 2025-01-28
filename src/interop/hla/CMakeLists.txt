@@ -6,7 +6,7 @@ add_library(interop_hla
 
 target_link_libraries (
 	interop_hla
-	PRIVATE
+	PUBLIC
 	base
 )
 

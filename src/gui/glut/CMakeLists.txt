@@ -6,7 +6,7 @@ add_library(gui_glut
 
 target_link_libraries (
 	gui_glut
-	PRIVATE
+	PUBLIC
 	base
 	graphics
 )

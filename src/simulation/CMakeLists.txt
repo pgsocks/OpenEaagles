@@ -17,7 +17,7 @@ add_library(simulation
 
 target_link_libraries (
 	simulation
-	PRIVATE
+	PUBLIC
 	base
 )
 

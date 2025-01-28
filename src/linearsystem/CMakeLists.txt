@@ -16,7 +16,7 @@ add_library(linearsystem
 
 target_link_libraries (
 	linearsystem
-	PRIVATE
+	PUBLIC
 	base
 )
 

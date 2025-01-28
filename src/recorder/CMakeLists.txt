@@ -19,7 +19,7 @@ add_library(recorder
 
 target_link_libraries (
 	recorder
-	PRIVATE
+	PUBLIC
 	base
 	simulation
 	models
