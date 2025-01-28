@@ -1,4 +1,5 @@
 add_library(interop_dis
+	STATIC
 	EmissionPduHandler.cpp
 	factory.cpp
 	NetIO.cpp

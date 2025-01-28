@@ -1,4 +1,5 @@
 add_library(dafif
+	STATIC
 	Airport.cpp
 	AirportLoader.cpp
 	Record.cpp

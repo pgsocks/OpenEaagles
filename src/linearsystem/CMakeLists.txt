@@ -1,4 +1,5 @@
 add_library(linearsystem
+	STATIC
 	DiffEquation.cpp
 	FirstOrderTf.cpp
 	LagFilter.cpp

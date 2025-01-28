@@ -1,4 +1,5 @@
 add_library(terrain
+	STATIC
 	ded/DedFile.cpp
 	dted/DtedFile.cpp
 	srtm/SrtmHgtFile.cpp

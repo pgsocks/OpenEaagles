@@ -1,4 +1,5 @@
 add_library(simulation
+	STATIC
 	AbstractDataRecorder.cpp
 	AbstractNetIO.cpp
 	AbstractNib.cpp

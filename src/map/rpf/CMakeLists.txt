@@ -1,4 +1,5 @@
 add_library(map_rpf
+	STATIC
 	CadrgClut.cpp
 	CadrgFile.cpp
 	CadrgFrame.cpp

@@ -1,4 +1,5 @@
 add_library(interop_rprfom
+	STATIC
 	factory.cpp
 	NetIO.cpp
 	NetIO_entity_state.cpp

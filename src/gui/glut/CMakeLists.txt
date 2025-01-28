@@ -1,4 +1,5 @@
 add_library(gui_glut
+	STATIC
 	factory.cpp
 	GlutDisplay.cpp
 	Shapes3D.cpp

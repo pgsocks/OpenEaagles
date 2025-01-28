@@ -1,6 +1,7 @@
 find_package(protobuf CONFIG REQUIRED)
 
 add_library(recorder
+	STATIC
 	protobuf/DataRecord.proto
 	DataRecorder.cpp
 	DataRecordHandle.cpp

@@ -1,4 +1,5 @@
 add_library(interop_hla
+	STATIC
 	Ambassador.cpp
 	NetIO.cpp
 	Nib.cpp

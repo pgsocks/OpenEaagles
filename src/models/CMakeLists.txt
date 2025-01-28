@@ -1,4 +1,5 @@
 add_library(models
+	STATIC
 	dynamics/AerodynamicsModel.cpp
 	dynamics/DynamicsModel.cpp
 	dynamics/JSBSimModel.cpp

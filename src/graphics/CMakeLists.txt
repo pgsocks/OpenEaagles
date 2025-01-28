@@ -1,4 +1,5 @@
 add_library(graphics
+	STATIC
 	readouts/AsciiText.cpp
 	readouts/Cursor.cpp
 	readouts/DirectionReadout.cpp

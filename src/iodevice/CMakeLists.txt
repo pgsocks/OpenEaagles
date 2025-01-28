@@ -1,4 +1,5 @@
 add_library(iodevice
+	STATIC
 	Ai2DiSwitch.cpp
 	AnalogInput.cpp
 	AnalogOutput.cpp

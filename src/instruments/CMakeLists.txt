@@ -1,4 +1,5 @@
 add_library(instruments
+	STATIC
 	adi/Adi.cpp
 	adi/GhostHorizon.cpp
 	buttons/Button.cpp

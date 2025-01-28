@@ -1,4 +1,5 @@
 add_library(interop_common
+	STATIC
 	NetIO.cpp
 	Nib.cpp
 	Ntm.cpp

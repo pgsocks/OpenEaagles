@@ -1,4 +1,5 @@
 add_library(otw
+	STATIC
 	cigi/CigiCl.cpp
 	cigi/CigiClNetwork.cpp
 	cigi/OtwCigiCl.cpp

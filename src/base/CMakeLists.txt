@@ -22,6 +22,7 @@ else()
 	)
 endif()
 add_library(base
+	STATIC
 	concurrent/PeriodicTask.cpp
 	concurrent/SingleTask.cpp
 	concurrent/SyncTask.cpp
